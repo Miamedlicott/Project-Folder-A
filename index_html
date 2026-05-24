@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Meta -->
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Responsive website assessment project"
+  >
+
+  <title>Responsive Website</title>
+
+  <!-- CSS -->
+  <link
+    rel="stylesheet"
+    href="assets/css/styles.css"
+  >
+</head>
+
+<body>
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+
+  <nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="#" class="nav-logo">
+      <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <polygon points="12 2 2 7 12 12 22 7 12 2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <polyline points="2 17 12 22 22 17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <polyline points="2 12 12 17 22 12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="logo-text">Canberra Modern</span>
+    </a>
+
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+
+    <div class="nav-menu" id="navMenu">
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a href="#" class="nav-link active">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">Events & Tours</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">Places to Go</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">Heritage</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">Media</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">About Us</a>
+        </li>
+      </ul>
+
+      </div>
+    </div>
+  </div>
+</nav>
+</main>
+
+/* =========================
+   HERO
+========================= */
+
+<br>
+<br>
+<body>
+    <header>
+      <h1>Home</h1>
+    </header>
+      </div>
+</body>
+
+
+  <!-- =========================
+       MAIN
+  ========================== -->
+
+ 
+</head>
+
+<body>
+  <br>
+  <img src="img_logo2.jpg" alt="logo2" class="responsive" width="300" height="200">
+
+</body>
+
+</html>
+
+</style>
+</head>
+
+<body>
+  <br>
+  <h2>Canberra Modern</h2>
+  <p>
+    Canberra Modern is an annual program of events showcasing Canberra’s unique mid and late twentieth century places and spaces.
+    Our motto is 'Conservation Through Participation' and our innovative events aim to increase awareness of Canberra’s modernist character, heritage and uniqueness.
+    <br>
+    Through event-based advocacy and engagement with the community, Canberra Modern aims to promote protection and appreciation of the places which make an irreplaceable contribution to Canberra’s historic urban and designed cultural landscape.
+  </p>
+  <br>
+  <button type="button" class="collapsible">Overview of Future Events and Tours</button>
+  <div class="content">
+    <p><br>Random Event(link) - Date xx/xx/xx Location<br><br>Random Event(link) - Date xx/xx/xx Location:<br><br>Random Event(link) - Date xx/xx/xx Location:<br><br>Random Event(link) - Date xx/xx/xx Location:<br><br></p>
+  </div>
+
+
+
+</body>
+
+</html>
+
+<br>
+<br>
+
+  
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <body>
+    <footer>
+        <div class="f-item-con">
+            <div class="app-info">
+                <span class='app-name'>
+                    <span class='app-initial'>Canberra Modern
+
+            </div>
+            <div class="navigation">
+                <div class="footer-title">Navigation</div>
+                <ul>
+                    <li>Home</li>
+                    <li>Events & Tours</li>
+                    <li>Places to Visit</li>
+                    <li>Heritage</li>
+                    <li>Media</li>
+                    <li>About Us</li>
+             
+                </ul>
+            </div>
+            <div class="g-i-t">
+                <div class="footer-title">Contact Us</div>
+                <form action="/" method="post" class="space-y-2">
+                    <input type="text" name="g-name" class="g-inp" id="g-name" placeholder='Name' />
+                    <input type="email" name="g-email" class="g-inp" id="g-email" placeholder='Email' />
+                    <textarea type="text" name="g-msg" class="g-inp h-40 resize-none" id="g-msg"
+                        placeholder='Message...'></textarea>
+                    <button type="submit" class='f-btn'>Submit</button>
+                </form>
+            </div>
+        </div>
+        <div class='cr-con'>This website was produced by students in the Faculty of Arts & Design, University of Canberra, 2026</div>
+    </footer>
+
+
+</body>
+</html>
