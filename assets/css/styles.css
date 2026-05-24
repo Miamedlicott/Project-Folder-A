@@ -1,174 +1,698 @@
-<!DOCTYPE html>
-<html lang="en">
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-<head>
-  <!-- Meta -->
-  <meta charset="UTF-8">
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+:root {
+  --text-primary: #2b2b2b;
+  --text-secondary: #e0a526;
+  --background: #ffffff;
+  --border-color: #d96e32;
+  --nav-height: 72px;
+}
 
-  <meta
-    name="description"
-    content="Responsive website assessment project"
-  >
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  background: var(--background);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
 
-  <title>Canberra ModernResponsive Website</title>
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--background);
+  border-bottom: 1px solid var(--border-color);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
 
-  <!-- CSS -->
-  <link
-    rel="stylesheet"
-    href="assets/css/styles.css"
-  >
-</head>
+.navbar.scrolled {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
 
-<body>
+.nav-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 clamp(16px, 4vw, 32px);
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-  <!-- =========================
-       HEADER
-  ========================== -->
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--text-primary);
+  font-weight: 700;
+  font-size: 20px;
+  z-index: 1001;
+}
 
-  <nav class="navbar" id="navbar">
-  <div class="nav-container">
-    <a href="#" class="nav-logo">
-      <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-        <polygon points="12 2 2 7 12 12 22 7 12 2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <polyline points="2 17 12 22 22 17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <polyline points="2 12 12 17 22 12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      <span class="logo-text">Canberra Modern</span>
-    </a>
+.logo-icon {
+  width: 32px;
+  height: 32px;
+  stroke-width: 2;
+}
 
-    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-      <span class="hamburger-line"></span>
-      <span class="hamburger-line"></span>
-      <span class="hamburger-line"></span>
-    </button>
+.logo-text {
+  letter-spacing: -0.5px;
+}
 
-    <div class="nav-menu" id="navMenu">
-      <ul class="nav-list">
-        <li class="nav-item">
-          <a href="#" class="nav-link active">Home</a>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link">Events & Tours</a>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link">Places to Go</a>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link">Heritage</a>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link">Media</a>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link">About Us</a>
-        </li>
-      </ul>
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+  transition: all 0.3s ease;
+}
 
-      </div>
-    </div>
-  </div>
-</nav>
-</main>
+.hamburger-line {
+  width: 100%;
+  height: 2px;
+  background: var(--text-primary);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
 
-/* =========================
-   HERO
-========================= */
+.hamburger.active .hamburger-line:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
 
-<br>
-<br>
-<body>
-    <header>
-      <h1>Home</h1>
-    </header>
-      </div>
-</body>
+.hamburger.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .hamburger-line:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: clamp(24px, 4vw, 48px);
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 3vw, 32px);
+  list-style: none;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-size: 15px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent-color);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--text-primary);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-btn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.nav-btn.secondary {
+  color: var(--text-primary);
+  background: transparent;
+  border: 1px solid var(--border-color);
+}
+
+.nav-btn.secondary:hover {
+  background: var(--background);
+}
+
+.nav-btn.primary {
+  color: #ffffff;
+  background: var(--accent-color);
+  border: 1px solid var(--accent-color);
+}
+
+.nav-btn.primary:hover {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
 
 
-  <!-- =========================
-       MAIN
-  ========================== -->
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
 
- 
-</head>
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: min(320px, 85vw);
+    height: 100vh;
+    background: var(--background);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    padding: 100px 32px 32px;
+    gap: 32px;
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
 
-<body>
-  <br>
-  <img src="img_logo2.jpg" alt="logo2" class="responsive" width="300" height="200">
+  .nav-menu.active {
+    right: 0;
+  }
 
-</body>
+  .nav-list {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
 
-</html>
+  .nav-item {
+    border-bottom: 1px solid var(--border-color);
+  }
 
-</style>
-</head>
+  .nav-link {
+    display: block;
+    padding: 16px 0;
+    font-size: 16px;
+  }
 
-<body>
-  <br>
-  <h2>Canberra Modern</h2>
-  <p>
-    Canberra Modern is an annual program of events showcasing Canberra’s unique mid and late twentieth century places and spaces.
-    Our motto is 'Conservation Through Participation' and our innovative events aim to increase awareness of Canberra’s modernist character, heritage and uniqueness.
-    <br>
-    Through event-based advocacy and engagement with the community, Canberra Modern aims to promote protection and appreciation of the places which make an irreplaceable contribution to Canberra’s historic urban and designed cultural landscape.
-  </p>
-  <br>
-  <button type="button" class="collapsible">Overview of Future Events and Tours</button>
-  <div class="content">
-    <p><br>Random Event(link) - Date xx/xx/xx Location<br><br>Random Event(link) - Date xx/xx/xx Location:<br><br>Random Event(link) - Date xx/xx/xx Location:<br><br>Random Event(link) - Date xx/xx/xx Location:<br><br></p>
-  </div>
+  .nav-link::after {
+    display: none;
+  }
+
+  .nav-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav-btn {
+    width: 100%;
+    text-align: center;
+    padding: 14px 20px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .nav-list {
+    gap: 20px;
+  }
+}
+
+body {
+	text-align: center;
+	font-family: 'Fira Sans', sans-serif;
+}
+
+
+body2 {
+	text-align: center;
+	font-family: 'Fira Sans', sans-serif;
+  padding: 50px;
+}
+
+header {
+  background: #e0a526;
+  height: 300px;
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+header h1 {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+h1 {
+
+  color: #fff;
+  font-size: 3em;
+  font-weight: 600;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.col-container {
+  display: table;
+  width: 100%;
+}
+.col {
+  display: table-cell;
+  padding: 16px;
+}
+
+@media only screen and (max-width: 600px) {
+  .col {
+    display: block;
+    width: 100%;
+  }
+}
+
+h2 {
+  color: #e0a526;
+  font-size: 1.5em;
+  font-weight: 600;
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #2a7f83;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+hr.solid {
+  border-top: 3px solid #c7c3bc;
+}
+
+hr.rounded {
+  border-top: 8px solid #bbb;
+  border-radius: 5px;
+}
+
+li::marker {
+  color: #e0a526;
+}
+
+.responsive {
+  width: 50%;
+  max-width: 200px;
+  height: auto;
+}
+
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 50%;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: #2a7f8e;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f5f3ee;
+}
+
+* {
+    margin: 0; padding: 0;
+    border: 0; outline: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+:root {
+    --theme-col: #f5f3ee;
+}
+.space-y-2 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+}
+footer {
+    background-color: #2b2b2b;
+}
+.f-item-con {
+    padding: 1.5rem 4rem;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-gap: 2rem;
+}
+footer .app-name {
+    color: white;
+    border-left: 4px solid var(--theme-col);
+    padding-left: 1.5rem;
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    font-weight: 700;
+}
+.app-name .app-initial {
+    color: var(--theme-col);
+}
+footer .app-info p {
+    color: white;
+    padding-left: 1.65rem;
+}
+footer .footer-title {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    color: white;
+    border-left: 4px solid var(--theme-col);
+    padding-left: 1.5rem;
+    height: fit-content;
+}
+footer ul {
+    padding-left: 1.75rem;
+    color: white;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    margin-top: .5rem;
+}
+footer ul li {
+    margin: .25rem 0;
+    cursor: pointer;
+    color: #d4d4d4;
+    width: fit-content;
+}
+footer ul li:hover {
+    color: white;
+}
+footer .help-sec {
+    grid-column-start: 2;
+}
+footer .cr-con {
+    background-color: #2e2c2e;
+    color: white;
+    padding: 1rem 4rem;
+    text-align: center;
+}
+.g-i-t {
+    display: grid;
+    grid-column-start: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+.g-i-t form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    --tw-space-y-reverse: 0;
+    margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+}
+form .g-inp {
+    padding: .25rem .5rem;
+    font-size: 16px;
+}
+.g-inp textarea {
+    height: 150px;
+}
+.f-btn {
+    padding: .25rem 1rem;
+    background-color: var(--theme-col);
+    border-radius: .25rem;
+    font-size: 16px;
+    color: white;
+    font-weight: 500;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #2a7f83;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+hr.solid {
+  border-top: 3px solid #c7c3bc;
+}
+
+hr.rounded {
+  border-top: 8px solid #bbb;
+  border-radius: 5px;
+}
+
+li::marker {
+  color:#e0a526;
+}
 
 
 
-</body>
 
-</html>
-
-<br>
-<br>
 
   
-  <!-- =========================
-       FOOTER
-  ========================== -->
-
-  <body>
-    <footer>
-        <div class="f-item-con">
-            <div class="app-info">
-                <span class='app-name'>
-                    <span class='app-initial'>Canberra Modern
-
-            </div>
-            <div class="navigation">
-                <div class="footer-title">Navigation</div>
-                <ul>
-                    <li>Home</li>
-                    <li>Events & Tours</li>
-                    <li>Places to Visit</li>
-                    <li>Heritage</li>
-                    <li>Media</li>
-                    <li>About Us</li>
-             
-                </ul>
-            </div>
-            <div class="g-i-t">
-                <div class="footer-title">Contact Us</div>
-                <form action="/" method="post" class="space-y-2">
-                    <input type="text" name="g-name" class="g-inp" id="g-name" placeholder='Name' />
-                    <input type="email" name="g-email" class="g-inp" id="g-email" placeholder='Email' />
-                    <textarea type="text" name="g-msg" class="g-inp h-40 resize-none" id="g-msg"
-                        placeholder='Message...'></textarea>
-                    <button type="submit" class='f-btn'>Submit</button>
-                </form>
-            </div>
-        </div>
-        <div class='cr-con'>This website was produced by students in the Faculty of Arts & Design, University of Canberra, 2026</div>
-    </footer>
 
 
-</body>
-</html>
+
+*{
+    margin: 0; padding: 0;
+    border: 0; outline: 0;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+:root{
+    --theme-col: #f5f3ee;
+}
+.space-y-2 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+}
+footer{
+    background-color: #2b2b2b;
+}
+.f-item-con{
+    padding: 1.5rem 4rem;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-gap: 2rem;
+  
+}
+footer .app-name{
+    color: white;
+    border-left: 4px solid var(--theme-col);
+    padding-left: 1.5rem;
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    font-weight: 700;
+}
+.app-name .app-initial{
+    color: var(--theme-col);
+}
+footer .app-info p{
+    color: white;
+    padding-left: 1.65rem;
+}
+
+footer .footer-title{ 
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    color: white;
+    border-left: 4px solid var(--theme-col);
+    padding-left: 1.5rem;
+    height: fit-content;
+}
+footer ul{ 
+    padding-left: 1.75rem;
+    color: white;
+    font-size: 0.875rem/* 14px */;
+    line-height: 1.25rem;
+    margin-top: .5rem;
+}
+footer ul li{ 
+    margin: .25rem 0;
+    cursor: pointer;
+    color: #d4d4d4;
+    width: fit-content;
+}
+footer ul li:hover{
+    color: white;
+}
+footer .help-sec{
+    grid-column-start: 2;
+}
+footer .cr-con{
+    background-color: #2e2c2e;
+    color: white;
+    padding: 1rem 4rem;
+    text-align: center;
+}
+.g-i-t{
+    display: grid;
+    grid-column-start: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+.g-i-t form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    --tw-space-y-reverse: 0;
+    margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+}
+form .g-inp{
+    padding: .25rem .5rem;
+    font-size: 16px;
+}
+.g-inp textarea{
+    height: 150px;
+}
+.f-btn{
+    padding: .25rem 1rem;
+    background-color: var(--theme-col);
+    border-radius: .25rem;
+    font-size: 16px;
+    color: white;
+    font-weight: 500;
+}
+
+.responsive {
+    width: 50%;
+    max-width: 200px;
+    height: auto;
+}
+
+/* =========================
+   Collapsible CSS
+========================= */
+
+.collapsible {
+    background-color: #777;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 50%;
+    border: none;
+    text-align: center;
+    outline: none;
+    font-size: 15px;
+}
+
+.active, .collapsible:hover {
+    background-color: #2a7f8e;
+}
+
+.content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f5f3ee;
+}
