@@ -1,108 +1,3 @@
-/* =========================
-   RESET
-========================= */
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* =========================
-   ROOT VARIABLES
-========================= */
-
-:root {
-
-  --primary-color: #e0a526;
-  --secondary-color: #f3f4f6;
-  --accent-color: #2a7f8e;
-
-  --text-color: #2b2b2b;
-
-  --max-width: 1200px;
-
-  --spacing-sm: 1rem;
-  --spacing-md: 2rem;
-  --spacing-lg: 4rem;
-
-  --border-radius: 12px;
-}
-
-/* =========================
-   GLOBAL STYLES
-========================= */
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-
-  font-family:
-    Arial,
-    sans-serif;
-
-  line-height: 1.6;
-
-  color: var(--text-color);
-
-  background-color: var(--secondary-color);
-}
-
-img {
-  max-width: 100%;
-  display: block;
-}
-
-ul {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* =========================
-   REUSABLE CLASSES
-========================= */
-
-.container {
-
-  width: min(90%, var(--max-width));
-
-  margin-inline: auto;
-}
-
-.section-spacing {
-  padding: var(--spacing-lg) 0;
-}
-
-.btn {
-
-  display: inline-block;
-
-  padding:
-    0.75rem
-    1.5rem;
-
-  border-radius: var(--border-radius);
-
-  background-color: var(--accent-color);
-
-  color: white;
-
-  transition: 0.3s ease;
-}
-
-.btn:hover {
-  opacity: 0.9;
-}
-
-/* =========================
-   HEADER
-========================= */
 * {
   margin: 0;
   padding: 0;
@@ -351,41 +246,320 @@ body {
   }
 }
 
-/* =========================
-   HERO
-========================= */
 body {
 	text-align: center;
 	font-family: 'Fira Sans', sans-serif;
 }
 
+
+body2 {
+	text-align: center;
+	font-family: 'Fira Sans', sans-serif;
+  padding: 50px;
+}
+
 header {
-  background:#e0a526;
-	height:300px;
-  width:100%;
-	position:0;
-	top:0;
-	left:0;
-	z-index:1;
-  
-   h1 {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  
+  background: #e0a526;
+  height: 300px;
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+header h1 {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 h1 {
-	color:#fff;
-	font-size:3em;
-	font-weight:600;
-	margin:0;
+
+  color: #fff;
+  font-size: 3em;
+  font-weight: 600;
+  margin: 0;
 }
 
-/* =========================
-   FOOTER
-========================= */
+* {
+  box-sizing: border-box;
+}
+
+.col-container {
+  display: table;
+  width: 100%;
+}
+.col {
+  display: table-cell;
+  padding: 16px;
+}
+
+@media only screen and (max-width: 600px) {
+  .col {
+    display: block;
+    width: 100%;
+  }
+}
+
+h2 {
+  color: #e0a526;
+  font-size: 1.5em;
+  font-weight: 600;
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #2a7f83;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+hr.solid {
+  border-top: 3px solid #c7c3bc;
+}
+
+hr.rounded {
+  border-top: 8px solid #bbb;
+  border-radius: 5px;
+}
+
+li::marker {
+  color: #e0a526;
+}
+
+.responsive {
+  width: 50%;
+  max-width: 200px;
+  height: auto;
+}
+
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 50%;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: #2a7f8e;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f5f3ee;
+}
+
+* {
+    margin: 0; padding: 0;
+    border: 0; outline: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+:root {
+    --theme-col: #f5f3ee;
+}
+.space-y-2 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+}
+footer {
+    background-color: #2b2b2b;
+}
+.f-item-con {
+    padding: 1.5rem 4rem;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-gap: 2rem;
+}
+footer .app-name {
+    color: white;
+    border-left: 4px solid var(--theme-col);
+    padding-left: 1.5rem;
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    font-weight: 700;
+}
+.app-name .app-initial {
+    color: var(--theme-col);
+}
+footer .app-info p {
+    color: white;
+    padding-left: 1.65rem;
+}
+footer .footer-title {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    color: white;
+    border-left: 4px solid var(--theme-col);
+    padding-left: 1.5rem;
+    height: fit-content;
+}
+footer ul {
+    padding-left: 1.75rem;
+    color: white;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    margin-top: .5rem;
+}
+footer ul li {
+    margin: .25rem 0;
+    cursor: pointer;
+    color: #d4d4d4;
+    width: fit-content;
+}
+footer ul li:hover {
+    color: white;
+}
+footer .help-sec {
+    grid-column-start: 2;
+}
+footer .cr-con {
+    background-color: #2e2c2e;
+    color: white;
+    padding: 1rem 4rem;
+    text-align: center;
+}
+.g-i-t {
+    display: grid;
+    grid-column-start: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+.g-i-t form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    --tw-space-y-reverse: 0;
+    margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+}
+form .g-inp {
+    padding: .25rem .5rem;
+    font-size: 16px;
+}
+.g-inp textarea {
+    height: 150px;
+}
+.f-btn {
+    padding: .25rem 1rem;
+    background-color: var(--theme-col);
+    border-radius: .25rem;
+    font-size: 16px;
+    color: white;
+    font-weight: 500;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #2a7f83;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+hr.solid {
+  border-top: 3px solid #c7c3bc;
+}
+
+hr.rounded {
+  border-top: 8px solid #bbb;
+  border-radius: 5px;
+}
+
+li::marker {
+  color:#e0a526;
+}
+
+
+
+
+
+  
+
+
+
 *{
     margin: 0; padding: 0;
     border: 0; outline: 0;
@@ -409,6 +583,7 @@ footer{
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     grid-gap: 2rem;
+  
 }
 footer .app-name{
     color: white;
@@ -489,146 +664,35 @@ form .g-inp{
     font-weight: 500;
 }
 
-/* =========================
-   TABLET
-========================= */
-
-@media (min-width: 768px) {
-
-  .card-grid {
-
-    grid-template-columns:
-      repeat(2, 1fr);
-  }
-
+.responsive {
+    width: 50%;
+    max-width: 200px;
+    height: auto;
 }
 
 /* =========================
-   DESKTOP
+   Collapsible CSS
 ========================= */
 
-@media (min-width: 1024px) {
-
-  .card-grid {
-
-    grid-template-columns:
-      repeat(3, 1fr);
-  }
-
-}
-
-
-/* =========================
-   Home/Index Page CSS
-========================= */
-
-  
 .collapsible {
-  background-color: #777;
-  color: white;
-  cursor: pointer;
-  padding: 18px;
-  width: 50%;
-  border: none;
-  text-align: center;
-  outline: none;
-  font-size: 15px;
+    background-color: #777;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 50%;
+    border: none;
+    text-align: center;
+    outline: none;
+    font-size: 15px;
 }
 
 .active, .collapsible:hover {
-  background-color: #2a7f8e;
+    background-color: #2a7f8e;
 }
 
 .content {
-  padding: 0 18px;
-  display: none;
-  overflow: hidden;
-  background-color: #f5f3ee;
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f5f3ee;
 }
-
-/* =========================
-   Events Page CSS
-========================= */
-
-
-
-
-/* =========================
-   Heritage Page CSS
-========================= */
-
-
-
-
-/* =========================
-   Media Page CSS
-========================= */
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  background-color: #fff;
-  padding: 20px;
-  font-family: Arial;
-}
-
-/* Center website */
-.main {
-  max-width: 1000px;
-  margin: auto;
-}
-
-h1 {
-  font-size: 50px;
-  word-break: break-all;
-}
-
-.row {
-  margin: 8px -16px;
-}
-
-/* Add padding BETWEEN each column */
-.row,
-.row > .column {
-  padding: 8px;
-}
-
-/* Create four equal columns that floats next to each other */
-.column {
-  float: left;
-  width: 25%;
-}
-
-/* Clear floats after rows */ 
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Content */
-.content {
-  background-color: #f5f3ee;
-  padding: 10px;
-}
-
-/* Responsive layout - makes a two column-layout instead of three columns */
-@media screen and (max-width: 900px) {
-  .column {
-    width: 50%;
-  }
-}
-
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .column {
-    width: 100%;
-  }
-}
-
-
-/* =========================
-   About Us Page CSS
-========================= */
