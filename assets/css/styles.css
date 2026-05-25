@@ -57,8 +57,8 @@ body {
   gap: 12px;
   text-decoration: none;
   color: var(--text-primary);
-  font-weight: 700;
-  font-size: 20px;
+  font-weight: 1000;
+  font-size: 40px;
   z-index: 1001;
 }
 
