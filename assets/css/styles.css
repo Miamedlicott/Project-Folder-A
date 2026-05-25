@@ -406,7 +406,7 @@ li::marker {
 }
 
 .active, .collapsible:hover {
-  background-color: #2a7f8e;
+  background-color: #e0a526;
 }
 
 .content {
