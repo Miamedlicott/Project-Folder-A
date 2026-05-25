@@ -2,7 +2,6 @@
 /* =========================
    Hamburger Navigation JavaScript
 ========================= */
-
 const navbar = document.getElementById('navbar');
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('navMenu');
@@ -52,6 +51,7 @@ document.addEventListener('click', (e) => {
     }
   }
 });
+
 
 
 /* =========================
