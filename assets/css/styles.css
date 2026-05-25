@@ -54,7 +54,7 @@ body {
 .nav-logo {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 20px;
   text-decoration: none;
   color: var(--text-primary);
   font-weight: 1000;
