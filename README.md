@@ -41,19 +41,19 @@ This project helped me build confidence in front-end development and responsive 
 Helpful Resources
 -
 CSS Tricks: 
-https://css-tricks.com/ 
+(n.d.). CSS-Tricks Guides. CSS-Tricks. Retrieved May 1, 2026, from https://css-tricks.com/ 
 Helpful for learning Flexbox and CSS Grid layouts.
 -
 W3Schools: 
-https://www.w3schools.com/ 
+(n.d.). Learn to Code. W3 Schools. Retrieved May 1, 2026, from https://www.w3schools.com/
 Used as a quick reference for HTML, JavaScript and CSS syntax.
 -
 Codepen: 
-https://css-tricks.com/
+(n.d.). Codepen. Retrieved May 1, 2026, from https://codepen.io/
 Used to write and check code responsiveness.
 -
 Webador: 
-https://www.webador.com/ 
+(n.d.). Your website, your way. Webador. Retrieved May 1, 2026, from https://www.webador.com/
 My prototype: https://temp-aowxckvdqyzhmqygzpgu.webadorsite.com/ 
 Used to create a high-fidelity prototype: 
 ---
