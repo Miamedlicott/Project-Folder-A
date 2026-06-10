@@ -261,28 +261,29 @@ body2 {
 }
 
 header {
-  background: #e0a526;
-  height: 300px;
-  width: 100%;
-  position: relative;
-  top: 0;
-  left: 0;
-  z-index: 1;
-}
-
-header h1 {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
+  background:#e0a526;
+	height:300px;
+  width:100%;
+	position:0;
+	top:0;
+	left:0;
+	z-index:1;
+  
+   h1 {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
 }
 
 h1 {
-
-  color: #fff;
-  font-size: 3em;
-  font-weight: 600;
-  margin: 0;
+	color:#fff;
+	font-size:3em;
+	font-weight:600;
+	margin:0;
 }
+
 
 * {
   box-sizing: border-box;
